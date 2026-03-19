@@ -298,19 +298,37 @@
 <div class="p-6 border-r-4 border-black flex items-center bg-black text-white">
 <span class="text-2xl font-black tracking-tighter font-headline" style="">RNGS</span>
 </div>
-<div class="flex-grow flex items-center px-8 space-x-8 overflow-x-auto whitespace-nowrap">
-<a class="font-headline font-bold uppercase text-xs tracking-widest border-b-2 border-[#fe9400]" href="#services" style="">[ SERVICES ]</a>
+<div class="hidden md:flex items-center gap-10 px-10">
+<a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#services" style="">[ SERVICES ]</a>
 <a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#process" style="">[ PROCESS ]</a>
 <a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#about" style="">[ ABOUT ]</a>
 <a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#contact" style="">[ CONTACT ]</a>
 </div>
-<div class="border-l-4 border-black flex items-center">
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="md:hidden flex items-center px-6 h-full border-l-4 border-black hover:bg-black hover:text-[#fe9400] transition-colors">
+    <span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Full Height Header Logic -->
+        <div class="border-l-4 border-black hidden md:flex items-center">
 <button class="bg-[#fe9400] px-8 h-full font-headline font-black uppercase text-sm tracking-tighter hover:bg-black hover:text-[#fe9400] transition-colors" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                 INITIALIZE
             </button>
 </div>
 </div>
 </header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-black z-[100] transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 p-8">
+    <button id="close-menu" class="absolute top-8 right-8 text-[#fe9400] hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <a href="#services" class="mobile-link text-4xl font-headline font-black text-white hover:text-[#fe9400] uppercase italic select-none">Services</a>
+    <a href="#process" class="mobile-link text-4xl font-headline font-black text-white hover:text-[#fe9400] uppercase italic select-none">Process</a>
+    <a href="#contact" class="mobile-link text-4xl font-headline font-black text-white hover:text-[#fe9400] uppercase italic select-none">Contact</a>
+    <button class="w-full brutalist-button bg-[#fe9400] text-black py-6 text-2xl uppercase tracking-tighter" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('translate-x-full');">
+        INITIALIZE NOW
+    </button>
+</div>
 <main class="space-y-0">
 <!-- Hero Section -->
 <section class="p-4 md:p-8 mb-12">
@@ -318,7 +336,7 @@
 <div class="lg:col-span-8 brutalist-card p-8 bg-white relative overflow-hidden glow-card">
 <div class="absolute top-0 right-0 p-4 border-l-2 border-b-2 border-black font-mono text-[10px] uppercase font-bold animate-pulse" style="">Session_Active: True</div>
 <span class="inline-block px-3 py-1 bg-black text-white font-headline font-bold text-[10px] tracking-[0.2em] uppercase mb-6 animate-bounce" style="">Growth Architecture System</span>
-<h1 class="font-headline text-5xl md:text-7xl font-black leading-none tracking-tighter mb-8 uppercase italic fade-in-up">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-9xl font-black leading-none tracking-tighter mb-8 uppercase italic fade-in-up">
                 RNG <span class="text-[#fe9400] bg-black px-4 inline-block hover:bg-[#fe9400] hover:text-black transition-colors duration-300 cursor-default" style="">Studio</span> Services
 </h1>
 <p class="font-body text-lg max-w-xl mb-8 border-l-8 border-[#fe9400] pl-6 py-2 font-medium fade-in-up delay-100" style="">
@@ -760,7 +778,7 @@ Full Growth System
 <div class="grid lg:grid-cols-2 gap-8">
 <div class="brutalist-card bg-white p-8">
 <h3 class="font-headline text-2xl font-black mb-4 uppercase italic" style="">We Build Growth Machines</h3>
-<p class="text-base font-bold leading-relaxed mb-6 uppercase border-l-4 border-[#fe9400] pl-4">RNG Studio is a growth architecture firm that engineers complete systems for market dominance.</p>
+<p class="text-base font-bold uppercase leading-relaxed mb-6 border-l-4 border-[#fe9400] pl-4">RNG Studio is a growth architecture firm that engineers complete systems for market dominance.</p>
 <p class="text-sm font-medium leading-relaxed mb-6">Unlike traditional agencies that offer fragmented services, we design and deploy integrated growth infrastructure. Our approach combines data science, automation, and strategic positioning to create self-reinforcing systems that compound results over time.</p>
 <p class="text-sm font-medium leading-relaxed">We don't believe in quick fixes or surface-level optimizations. We build the backend machinery that powers sustainable, predictable growth.</p>
 </div>
@@ -876,7 +894,10 @@ Book Strategy Call
                 <div class="absolute inset-0 opacity-10 [background-size:20px_20px] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)]"></div>
                 <div class="relative z-10">
                     <span class="inline-block px-4 py-2 bg-[#fe9400] text-black font-headline font-bold text-xs tracking-[0.3em] uppercase mb-8">Secure Transmission</span>
-                    <h2 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 italic leading-none">Connect <br> With <br> <span class="text-[#fe9400]">RNG Studio</span></h2>
+                    <h1 class="font-headline text-6xl md:text-8xl lg:text-9xl font-black uppercase italic leading-[0.8] mb-8 tracking-tighter" style="">
+                    KINETIC <br>
+<span class="text-[#fe9400]">SYSTEMS</span>
+</h1>
                     <p class="font-mono text-xs uppercase font-bold text-white/60 mb-12 leading-loose max-w-xs">
                         Secure your coordinates for a direct strategy assessment. Kinetic engine deployment starting at stage zero.
                     </p>
@@ -945,13 +966,18 @@ Book Strategy Call
 <p class="text-[12px] font-bold uppercase tracking-wider max-w-sm leading-loose opacity-60" style="">
                 Kinetic growth engineering for market leaders. High-velocity systems for high-stakes competition.
             </p>
-<div class="flex gap-4">
+<div class="flex gap-4 mb-4">
 <button class="w-10 h-10 border border-white flex items-center justify-center hover:bg-[#fe9400] hover:text-black transition-colors" style="">
 <span class="material-symbols-outlined text-sm" style="">share</span>
 </button>
 <button class="w-10 h-10 border border-white flex items-center justify-center hover:bg-[#fe9400] hover:text-black transition-colors" style="">
-<span class="material-symbols-outlined text-sm" style="">public</span>
+<span class="material-symbols-outlined text-sm" style="">terminal</span>
 </button>
+</div>
+<div class="flex flex-col gap-2 font-mono text-[10px] uppercase tracking-widest text-white/50">
+    <a href="terms.html" class="hover:text-[#fe9400] transition-colors">Terms_And_Conditions</a>
+    <a href="privacy.html" class="hover:text-[#fe9400] transition-colors">Privacy_Protocol</a>
+    <div class="mt-4 text-[8px] opacity-30">© 2026 RNG STUDIO. ALL RIGHTS RESERVED.</div>
 </div>
 </div>
 <div class="p-12 border-r border-white/10">
@@ -1121,5 +1147,27 @@ Book Strategy Call
     document.querySelectorAll('.group > div.text-6xl').forEach(stat => {
         statsObserver.observe(stat);
     });
+
+    // 8. Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    }
 </script>
 </body></html>

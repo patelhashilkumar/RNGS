@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "rng-studio-services",
   "cleanUrls": true,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
