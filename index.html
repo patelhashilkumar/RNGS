@@ -1,0 +1,1125 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="RNG Studio builds complete growth infrastructure systems including lead generation, conversion optimization, automation, and brand authority. Transform your business with engineered growth systems." name="description">
+<title>RNG Studio | Growth Systems Architecture</title>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' fill='%23fe9400' font-family='monospace' font-weight='bold' font-size='90'>R</text></svg>" rel="icon">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+        :root {
+            --solar-flare: #fe9400;
+            --terminal-bg: #ffffff;
+            --terminal-border: #000000;
+            --terminal-text: #000000;
+        }
+        body {
+            background-color: var(--terminal-bg);
+            color: var(--terminal-text);
+        }
+        body.modal-open {
+            overflow: hidden !important;
+            pointer-events: none;
+        }
+        body.modal-open #contact-modal {
+            pointer-events: auto;
+        }
+        body.modal-open #contact-modal * {
+            pointer-events: auto;
+        }
+        .brutalist-card {
+            border: 2px solid var(--terminal-border);
+            box-shadow: 4px 4px 0px 0px var(--terminal-border);
+            background: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .brutalist-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px var(--solar-flare);
+        }
+        .brutalist-button {
+            border: 2px solid var(--terminal-border);
+            background: var(--solar-flare);
+            color: black;
+            font-weight: 900;
+            box-shadow: 3px 3px 0px 0px var(--terminal-border);
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .brutalist-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .brutalist-button:hover:before {
+            left: 100%;
+        }
+        .brutalist-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px 0px var(--terminal-border);
+        }
+        .brutalist-button:hover {
+            background: black;
+            color: var(--solar-flare);
+            transform: translateY(-2px);
+        }
+        .grid-pattern {
+            background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; }
+        }
+        .header-cell {
+            border-bottom: 2px solid var(--terminal-border);
+            border-right: 2px solid var(--terminal-border);
+            padding: 0.5rem 1rem;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        .feature-list li:hover {
+            transform: translateX(4px);
+        }
+        .feature-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--solar-flare);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+        .feature-list li:hover:before {
+            transform: scale(1.2);
+        }
+        
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .loader-terminal {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 4px solid var(--solar-flare);
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+        .loader-inner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 4px solid white;
+            animation: rotate-loader 3s linear infinite;
+        }
+        .loader-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Space Grotesk', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--solar-flare);
+            letter-spacing: 4px;
+            animation: blink 1s step-end infinite;
+        }
+        .loading-bar {
+            width: 300px;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .loading-bar:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: var(--solar-flare);
+            animation: loadProgress 2.5s ease-in-out forwards;
+        }
+        @keyframes rotate-loader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse-border {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.7; }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger Animation Delays */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        
+        /* Hover Card Glow */
+        .glow-card {
+            position: relative;
+        }
+        .glow-card:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at center, rgba(254,148,0,0.3), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .glow-card:hover:after {
+            opacity: 1;
+        }
+        
+        /* Text Scramble Effect */
+        .scramble-text {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Floating Icons */
+        .float-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Gradient Animation */
+        .animated-gradient {
+            background: linear-gradient(-45deg, #fe9400, #ff6b00, #fe9400, #ffa500);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Pulse Dots */
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--solar-flare);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+        }
+        
+        /* Modal Scale In Animation */
+        @keyframes scale-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .animate-scale-in {
+            animation: scale-in 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-black selection:text-[#fe9400] grid-pattern">
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader-terminal">
+        <div class="loader-inner"></div>
+        <div class="loader-text">RNGS</div>
+    </div>
+    <div class="text-white font-mono text-sm mt-6 tracking-widest uppercase">Initializing System</div>
+    <div class="loading-bar"></div>
+    <div class="text-[#fe9400] font-mono text-xs mt-4 opacity-70" id="loading-status">Loading components...</div>
+</div>
+<header class="sticky top-0 z-50 bg-white border-b-4 border-black">
+<div class="flex flex-wrap items-stretch">
+<div class="p-6 border-r-4 border-black flex items-center bg-black text-white">
+<span class="text-2xl font-black tracking-tighter font-headline" style="">RNGS</span>
+</div>
+<div class="flex-grow flex items-center px-8 space-x-8 overflow-x-auto whitespace-nowrap">
+<a class="font-headline font-bold uppercase text-xs tracking-widest border-b-2 border-[#fe9400]" href="#services" style="">[ SERVICES ]</a>
+<a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#process" style="">[ PROCESS ]</a>
+<a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#about" style="">[ ABOUT ]</a>
+<a class="font-headline font-bold uppercase text-xs tracking-widest hover:text-[#fe9400]" href="#contact" style="">[ CONTACT ]</a>
+</div>
+<div class="border-l-4 border-black flex items-center">
+<button class="bg-[#fe9400] px-8 h-full font-headline font-black uppercase text-sm tracking-tighter hover:bg-black hover:text-[#fe9400] transition-colors" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                INITIALIZE
+            </button>
+</div>
+</div>
+</header>
+<main class="space-y-0">
+<!-- Hero Section -->
+<section class="p-4 md:p-8 mb-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 brutalist-card p-8 bg-white relative overflow-hidden glow-card">
+<div class="absolute top-0 right-0 p-4 border-l-2 border-b-2 border-black font-mono text-[10px] uppercase font-bold animate-pulse" style="">Session_Active: True</div>
+<span class="inline-block px-3 py-1 bg-black text-white font-headline font-bold text-[10px] tracking-[0.2em] uppercase mb-6 animate-bounce" style="">Growth Architecture System</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black leading-none tracking-tighter mb-8 uppercase italic fade-in-up">
+                RNG <span class="text-[#fe9400] bg-black px-4 inline-block hover:bg-[#fe9400] hover:text-black transition-colors duration-300 cursor-default" style="">Studio</span> Services
+</h1>
+<p class="font-body text-lg max-w-xl mb-8 border-l-8 border-[#fe9400] pl-6 py-2 font-medium fade-in-up delay-100" style="">
+                Complete growth infrastructure engineered for market dominance. Five integrated systems that transform businesses into industry leaders.
+            </p>
+<div class="flex gap-4 fade-in-up delay-200">
+<button class="brutalist-button px-10 py-5 flex items-center gap-3 uppercase group" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                    EXPLORE SYSTEMS <span class="material-symbols-outlined font-black group-hover:translate-x-1 transition-transform" style="">trending_up</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<div class="brutalist-card p-6 aspect-square overflow-hidden bg-[#fe9400] flex flex-col justify-end glow-card hover:border-black transition-colors duration-300 relative">
+<!-- Decorative Background Elements -->
+<div class="absolute top-4 right-4 w-16 h-16 border-2 border-black/20 animate-pulse"></div>
+<div class="absolute top-8 right-8 w-8 h-8 border-2 border-black/30 animate-spin" style="animation-duration: 10s;"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/10 to-transparent"></div>
+
+<!-- Top Badge -->
+<div class="absolute top-4 left-4 bg-black text-white px-3 py-1 text-[8px] font-mono font-bold uppercase tracking-wider">
+System Status: Active
+</div>
+
+<!-- Main Content -->
+<div class="mb-4 space-y-3 relative z-10">
+<div class="flex items-center gap-2 text-black text-xs font-black uppercase tracking-wider">
+<span class="w-2 h-2 bg-black inline-block animate-pulse"></span>
+<span>Complete Architecture</span>
+</div>
+<ul class="text-[10px] text-black/80 space-y-1 font-bold uppercase pl-2">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-black inline-block"></span>5 Integrated Layers</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-black inline-block"></span>End-to-End System</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-black inline-block"></span>Full Automation</li>
+</ul>
+</div>
+
+<!-- Bottom Stats Section -->
+<div class="mt-4 flex justify-between items-end border-t-2 border-black/30 pt-4 relative z-10">
+<div>
+<div class="text-black font-headline text-5xl font-black float-icon" style="">5</div>
+<div class="text-[10px] font-black uppercase tracking-widest text-black" style="">Integrated Systems</div>
+</div>
+<span class="material-symbols-outlined text-black text-4xl float-icon" style="">layers</span>
+</div>
+
+<!-- Corner Accent -->
+<div class="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-black/30"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Services Overview -->
+<section id="services" class="px-4 md:px-8 mb-16">
+<div class="flex items-center gap-4 bg-black text-white p-4 mb-6">
+<h2 class="font-headline text-2xl font-black uppercase tracking-tighter" style="">Core Service Architecture</h2>
+<div class="h-px flex-grow bg-white/20"></div>
+<span class="font-mono text-[#fe9400] font-bold" style="">[01-05]</span>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<!-- Service 1: Client Flow System -->
+<div class="service-card brutalist-card bg-white">
+<div class="bg-black text-white p-2 font-mono text-[10px] flex justify-between">
+<span class="" style="">STATUS: ACTIVE</span>
+<span class="" style="">SVC_01</span>
+</div>
+<div class="p-8">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-16 h-16 bg-[#fe9400] flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-black text-3xl" style="">account_circle</span>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-black mb-2 uppercase leading-tight" style="">Client Flow System</h3>
+<p class="text-sm font-bold uppercase tracking-wide text-gray-600" style="">Automated Lead Generation & Qualification</p>
+</div>
+</div>
+<p class="text-base leading-relaxed mb-6 font-medium border-l-4 border-[#fe9400] pl-4" style="">We build automated systems that consistently generate and qualify high-intent leads.</p>
+<div class="mb-6">
+<h4 class="font-headline text-lg font-black mb-3 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#fe9400]" style="">dns</span> System Components
+</h4>
+<ul class="feature-list space-y-2 text-sm font-bold uppercase">
+<li>Lead sourcing & acquisition engine</li>
+<li>Automated outreach systems</li>
+<li>AI lead qualification & scoring</li>
+<li>Booking funnel setup</li>
+<li>Follow-up & reactivation flows</li>
+</ul>
+</div>
+<div class="bg-black text-white p-4 mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#fe9400]" style="">trending_up</span>
+<div>
+<div class="text-[10px] font-mono uppercase opacity-70">Primary Outcome</div>
+<div class="font-headline font-black uppercase tracking-wider">Predictable Client Inflow</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Service 2: Conversion Engine -->
+<div class="service-card brutalist-card bg-white">
+<div class="bg-black text-white p-2 font-mono text-[10px] flex justify-between">
+<span class="" style="">STATUS: OPTIMIZED</span>
+<span class="" style="">SVC_02</span>
+</div>
+<div class="p-8">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-16 h-16 bg-[#fe9400] flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-black text-3xl" style="">conversion_path</span>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-black mb-2 uppercase leading-tight" style="">Conversion Engine</h3>
+<p class="text-sm font-bold uppercase tracking-wide text-gray-600" style="">Turn Traffic Into Paying Clients</p>
+</div>
+</div>
+<p class="text-base leading-relaxed mb-6 font-medium border-l-4 border-[#fe9400] pl-4" style="">We turn incoming traffic and leads into paying clients through structured conversion systems.</p>
+<div class="mb-6">
+<h4 class="font-headline text-lg font-black mb-3 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#fe9400]" style="">settings</span> System Components
+</h4>
+<ul class="feature-list space-y-2 text-sm font-bold uppercase">
+<li>High-converting funnel / website</li>
+<li>Offer positioning & messaging</li>
+<li>Sales flow & objection handling system</li>
+<li>Call structure optimization</li>
+<li>CRM pipeline design</li>
+</ul>
+</div>
+<div class="bg-black text-white p-4 mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#fe9400]" style="">analytics</span>
+<div>
+<div class="text-[10px] font-mono uppercase opacity-70">Primary Outcome</div>
+<div class="font-headline font-black uppercase tracking-wider">Higher Close Rates, Better Revenue Per Lead</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Service 3: Growth Infrastructure -->
+<div class="service-card brutalist-card bg-white">
+<div class="bg-black text-white p-2 font-mono text-[10px] flex justify-between">
+<span class="" style="">STATUS: SCALING</span>
+<span class="" style="">SVC_03</span>
+</div>
+<div class="p-8">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-16 h-16 bg-[#fe9400] flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-black text-3xl" style="">hub</span>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-black mb-2 uppercase leading-tight" style="">Growth Infrastructure</h3>
+<p class="text-sm font-bold uppercase tracking-wide text-gray-600" style="">Backend Systems For Scale</p>
+</div>
+</div>
+<p class="text-base leading-relaxed mb-6 font-medium border-l-4 border-[#fe9400] pl-4" style="">We build the backend systems required to scale without chaos.</p>
+<div class="mb-6">
+<h4 class="font-headline text-lg font-black mb-3 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#fe9400]" style="">construction</span> System Components
+</h4>
+<ul class="feature-list space-y-2 text-sm font-bold uppercase">
+<li>Automation workflows (CRM, onboarding, fulfillment)</li>
+<li>AI assistants & process automation</li>
+<li>Internal system design</li>
+<li>Reporting dashboards</li>
+<li>Workflow optimization</li>
+</ul>
+</div>
+<div class="bg-black text-white p-4 mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#fe9400]" style="">speed</span>
+<div>
+<div class="text-[10px] font-mono uppercase opacity-70">Primary Outcome</div>
+<div class="font-headline font-black uppercase tracking-wider">Scalable, Organized Operations</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Service 4: Authority System -->
+<div class="service-card brutalist-card bg-white">
+<div class="bg-black text-white p-2 font-mono text-[10px] flex justify-between">
+<span class="" style="">STATUS: ESTABLISHED</span>
+<span class="" style="">SVC_04</span>
+</div>
+<div class="p-8">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-16 h-16 bg-[#fe9400] flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-black text-3xl" style="">verified</span>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-black mb-2 uppercase leading-tight" style="">Authority System</h3>
+<p class="text-sm font-bold uppercase tracking-wide text-gray-600" style="">Position Your Brand As The Obvious Choice</p>
+</div>
+</div>
+<p class="text-base leading-relaxed mb-6 font-medium border-l-4 border-[#fe9400] pl-4" style="">We position your brand as the obvious choice in your niche.</p>
+<div class="mb-6">
+<h4 class="font-headline text-lg font-black mb-3 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#fe9400]" style="">star</span> System Components
+</h4>
+<ul class="feature-list space-y-2 text-sm font-bold uppercase">
+<li>Personal / brand positioning</li>
+<li>Content system strategy</li>
+<li>Social proof structuring</li>
+<li>Case study development</li>
+<li>Trust-building funnels</li>
+</ul>
+</div>
+<div class="bg-black text-white p-4 mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#fe9400]" style="">workspace_premium</span>
+<div>
+<div class="text-[10px] font-mono uppercase opacity-70">Primary Outcome</div>
+<div class="font-headline font-black uppercase tracking-wider">Increased Trust, Premium Positioning, Easier Sales</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Service 5: Full Growth System -->
+<div class="service-card brutalist-card bg-gradient-to-br from-[#fe9400] to-orange-600 border-4 border-black relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full z-0"></div>
+<div class="relative z-10">
+<div class="bg-black text-white p-3 font-mono text-xs flex justify-between items-center">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 bg-[#fe9400] rounded-full animate-pulse"></span>
+STATUS: PREMIUM
+</span>
+<span>SVC_05</span>
+</div>
+<div class="p-8">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-20 h-20 bg-white flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-shrink-0">
+<span class="material-symbols-outlined text-black text-4xl" style="">account_tree</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline text-3xl md:text-4xl font-black mb-3 uppercase leading-tight" style="">Full Growth System <span class="text-sm bg-white text-black px-3 py-1 ml-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block">PREMIUM</span></h3>
+<p class="text-base font-bold uppercase tracking-wide text-black/90" style="">Complete End-to-End Growth Infrastructure</p>
+</div>
+</div>
+<p class="text-lg leading-relaxed mb-8 font-bold border-l-8 border-black pl-6 bg-white/20 p-4 backdrop-blur-sm text-black" style="">A complete, integrated growth infrastructure built end-to-end.</p>
+<div class="bg-white p-6 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-6">
+<h4 class="font-headline text-xl font-black mb-4 uppercase flex items-center gap-3 text-black">
+<span class="material-symbols-outlined text-[#fe9400]" style="">all_inclusive</span> Complete Integration
+</h4>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-bold uppercase text-black">
+<li class="flex items-center gap-2 bg-gradient-to-r from-[#fe9400]/10 to-transparent p-3 border-l-4 border-[#fe9400]">
+<span class="material-symbols-outlined text-[#fe9400] text-lg">trending_up</span>
+Multi-channel acquisition system
+</li>
+<li class="flex items-center gap-2 bg-gradient-to-r from-[#fe9400]/10 to-transparent p-3 border-l-4 border-[#fe9400]">
+<span class="material-symbols-outlined text-[#fe9400] text-lg">funnel_top</span>
+Conversion + funnel ecosystem
+</li>
+<li class="flex items-center gap-2 bg-gradient-to-r from-[#fe9400]/10 to-transparent p-3 border-l-4 border-[#fe9400]">
+<span class="material-symbols-outlined text-[#fe9400] text-lg">settings_motion_mode</span>
+Automation + backend systems
+</li>
+<li class="flex items-center gap-2 bg-gradient-to-r from-[#fe9400]/10 to-transparent p-3 border-l-4 border-[#fe9400]">
+<span class="material-symbols-outlined text-[#fe9400] text-lg">attach_money</span>
+Offer & pricing strategy
+</li>
+<li class="flex items-center gap-2 bg-gradient-to-r from-[#fe9400]/10 to-transparent p-3 border-l-4 border-[#fe9400] md:col-span-2">
+<span class="material-symbols-outlined text-[#fe9400] text-lg">map</span>
+Scale roadmap
+</li>
+</ul>
+</div>
+<div class="bg-black text-white p-5 border-4 border-black shadow-[6px_6px_0px_0px_rgba(254,148,0,1)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#fe9400] text-3xl" style="">rocket_launch</span>
+<div>
+<div class="text-xs font-mono uppercase opacity-70 mb-1">Primary Outcome</div>
+<div class="font-headline font-black uppercase tracking-wider text-lg">A Fully Installed Growth Machine</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Comparison Section -->
+<section class="px-4 md:px-8 mb-16 fade-in-up">
+<div class="flex items-center gap-4 bg-black text-white p-4 mb-6">
+<h2 class="font-headline text-2xl font-black uppercase tracking-tighter" style="">System Comparison Matrix</h2>
+<div class="h-px flex-grow bg-white/20"></div>
+<span class="font-mono text-[#fe9400] font-bold flex items-center gap-2" style=""><span class="pulse-dot"></span>[ANALYSIS]</span>
+</div>
+<div class="brutalist-card bg-white overflow-x-hidden glow-card">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-black text-white">
+<th class="border-2 border-black p-4 text-left font-headline font-black uppercase text-xs tracking-wider">System</th>
+<th class="border-2 border-black p-4 text-left font-headline font-black uppercase text-xs tracking-wider">Best For</th>
+<th class="border-2 border-black p-4 text-left font-headline font-black uppercase text-xs tracking-wider">Timeline</th>
+<th class="border-2 border-black p-4 text-left font-headline font-black uppercase text-xs tracking-wider">Investment</th>
+<th class="border-2 border-black p-4 text-left font-headline font-black uppercase text-xs tracking-wider">Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-gray-50 transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+<td class="border-2 border-black p-4 font-bold uppercase text-sm">Client Flow System</td>
+<td class="border-2 border-black p-4 text-xs font-medium">Lead generation needs</td>
+<td class="border-2 border-black p-4 text-xs font-medium">4-6 weeks</td>
+<td class="border-2 border-black p-4 text-xs font-medium">$$</td>
+<td class="border-2 border-black p-4"><span class="inline-block px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase animate-pulse">High</span></td>
+</tr>
+<tr class="hover:bg-gray-50 transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+<td class="border-2 border-black p-4 font-bold uppercase text-sm">Conversion Engine</td>
+<td class="border-2 border-black p-4 text-xs font-medium">Low conversion rates</td>
+<td class="border-2 border-black p-4 text-xs font-medium">6-8 weeks</td>
+<td class="border-2 border-black p-4 text-xs font-medium">$$$</td>
+<td class="border-2 border-black p-4"><span class="inline-block px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase animate-pulse">Very High</span></td>
+</tr>
+<tr class="hover:bg-gray-50 transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+<td class="border-2 border-black p-4 font-bold uppercase text-sm">Growth Infrastructure</td>
+<td class="border-2 border-black p-4 text-xs font-medium">Scaling operations</td>
+<td class="border-2 border-black p-4 text-xs font-medium">8-10 weeks</td>
+<td class="border-2 border-black p-4 text-xs font-medium">$$$</td>
+<td class="border-2 border-black p-4"><span class="inline-block px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase animate-pulse">Critical</span></td>
+</tr>
+<tr class="hover:bg-gray-50 transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+<td class="border-2 border-black p-4 font-bold uppercase text-sm">Authority System</td>
+<td class="border-2 border-black p-4 text-xs font-medium">Brand positioning</td>
+<td class="border-2 border-black p-4 text-xs font-medium">6-8 weeks</td>
+<td class="border-2 border-black p-4 text-xs font-medium">$$</td>
+<td class="border-2 border-black p-4"><span class="inline-block px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase animate-pulse">High</span></td>
+</tr>
+<tr class="bg-gradient-to-r from-[#fe9400]/20 to-orange-500/20 hover:from-[#fe9400]/30 hover:to-orange-500/30 transition-all duration-300 cursor-pointer transform hover:scale-[1.02]">
+<td class="border-2 border-black p-4 font-bold uppercase text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[#fe9400] text-lg float-icon">workspace_premium</span>
+Full Growth System
+</td>
+<td class="border-2 border-black p-4 text-xs font-medium">Complete transformation</td>
+<td class="border-2 border-black p-4 text-xs font-medium">12-16 weeks</td>
+<td class="border-2 border-black p-4 text-xs font-medium">$$$$</td>
+<td class="border-2 border-black p-4"><span class="inline-block px-3 py-1 bg-black text-white text-[10px] font-black uppercase animate-pulse">Maximum</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="px-4 md:px-8 mb-16 fade-in-up">
+<div class="flex items-center gap-4 bg-black text-white p-4 mb-6">
+<h2 class="font-headline text-2xl font-black uppercase tracking-tighter" style="">Implementation Protocol</h2>
+<div class="h-px flex-grow bg-white/20"></div>
+<span class="font-mono text-[#fe9400] font-bold flex items-center gap-2" style=""><span class="pulse-dot"></span>[EXECUTION]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="brutalist-card bg-white p-6 relative glow-card group hover:scale-105 transition-transform duration-300">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center font-headline font-black text-xl border-2 border-[#fe9400] animate-bounce">01</div>
+<div class="pt-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-[#fe9400] flex items-center justify-center border-2 border-black group-hover:bg-black group-hover:border-[#fe9400] transition-colors duration-300">
+<span class="material-symbols-outlined text-black group-hover:text-[#fe9400] transition-colors" style="">search</span>
+</div>
+<h3 class="font-headline text-xl font-black uppercase" style="">Discovery & Audit</h3>
+</div>
+<p class="text-sm font-bold uppercase leading-relaxed">Deep-dive analysis of current systems, market position, and growth opportunities. We identify leverage points.</p>
+</div>
+</div>
+<div class="brutalist-card bg-white p-6 relative glow-card group hover:scale-105 transition-transform duration-300 delay-100">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center font-headline font-black text-xl border-2 border-[#fe9400] animate-bounce delay-100">02</div>
+<div class="pt-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-[#fe9400] flex items-center justify-center border-2 border-black group-hover:bg-black group-hover:border-[#fe9400] transition-colors duration-300">
+<span class="material-symbols-outlined text-black group-hover:text-[#fe9400] transition-colors" style="">architecture</span>
+</div>
+<h3 class="font-headline text-xl font-black uppercase" style="">System Design</h3>
+</div>
+<p class="text-sm font-bold uppercase leading-relaxed">Custom architecture blueprint tailored to your business model, audience, and scaling requirements.</p>
+</div>
+</div>
+<div class="brutalist-card bg-white p-6 relative glow-card group hover:scale-105 transition-transform duration-300 delay-200">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center font-headline font-black text-xl border-2 border-[#fe9400] animate-bounce delay-200">03</div>
+<div class="pt-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-[#fe9400] flex items-center justify-center border-2 border-black group-hover:bg-black group-hover:border-[#fe9400] transition-colors duration-300">
+<span class="material-symbols-outlined text-black group-hover:text-[#fe9400] transition-colors" style="">build</span>
+</div>
+<h3 class="font-headline text-xl font-black uppercase" style="">Build & Deploy</h3>
+</div>
+<p class="text-sm font-bold uppercase leading-relaxed">Rapid development and integration of all system components with real-time testing and optimization.</p>
+</div>
+</div>
+<div class="brutalist-card bg-white p-6 relative glow-card group hover:scale-105 transition-transform duration-300 delay-300">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center font-headline font-black text-xl border-2 border-[#fe9400] animate-bounce delay-300">04</div>
+<div class="pt-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-[#fe9400] flex items-center justify-center border-2 border-black group-hover:bg-black group-hover:border-[#fe9400] transition-colors duration-300">
+<span class="material-symbols-outlined text-black group-hover:text-[#fe9400] transition-colors" style="">trending_up</span>
+</div>
+<h3 class="font-headline text-xl font-black uppercase" style="">Scale & Optimize</h3>
+</div>
+<p class="text-sm font-bold uppercase leading-relaxed">Continuous monitoring, refinement, and scaling protocols to maximize performance and ROI.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Stats Section -->
+<section class="px-4 md:px-8 mb-16 fade-in-up">
+<div class="brutalist-card bg-black text-white p-8 animated-gradient">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div class="group">
+<div class="text-6xl font-headline font-black text-white mb-2 group-hover:scale-125 transition-transform duration-300" style="">150+</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-90" style="">Systems Deployed</div>
+</div>
+<div class="group border-l-2 border-white/20 border-r-2">
+<div class="text-6xl font-headline font-black text-white mb-2 group-hover:scale-125 transition-transform duration-300" style="">94%</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-90" style="">Client Retention Rate</div>
+</div>
+<div class="group">
+<div class="text-6xl font-headline font-black text-white mb-2 group-hover:scale-125 transition-transform duration-300" style="">5X</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-90" style="">Average ROI Increase</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="px-4 md:px-8 mb-16">
+<div class="flex items-center gap-4 bg-black text-white p-4 mb-6">
+<h2 class="font-headline text-2xl font-black uppercase tracking-tighter" style="">About RNG Studio</h2>
+<div class="h-px flex-grow bg-white/20"></div>
+<span class="font-mono text-[#fe9400] font-bold" style="">[ORIGIN]</span>
+</div>
+<div class="grid lg:grid-cols-2 gap-8">
+<div class="brutalist-card bg-white p-8">
+<h3 class="font-headline text-2xl font-black mb-4 uppercase italic" style="">We Build Growth Machines</h3>
+<p class="text-base font-bold leading-relaxed mb-6 uppercase border-l-4 border-[#fe9400] pl-4">RNG Studio is a growth architecture firm that engineers complete systems for market dominance.</p>
+<p class="text-sm font-medium leading-relaxed mb-6">Unlike traditional agencies that offer fragmented services, we design and deploy integrated growth infrastructure. Our approach combines data science, automation, and strategic positioning to create self-reinforcing systems that compound results over time.</p>
+<p class="text-sm font-medium leading-relaxed">We don't believe in quick fixes or surface-level optimizations. We build the backend machinery that powers sustainable, predictable growth.</p>
+</div>
+<div class="brutalist-card bg-[#fe9400] p-8 flex flex-col justify-center">
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-black flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#fe9400]" style="">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-black uppercase mb-1" style="">Full Ownership</h4>
+<p class="text-xs font-bold uppercase opacity-80">You own every system we build</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-black flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#fe9400]" style="">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-black uppercase mb-1" style="">No Retainer Lock-in</h4>
+<p class="text-xs font-bold uppercase opacity-80">Results-driven partnerships only</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-black flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#fe9400]" style="">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-black uppercase mb-1" style="">Technical Independence</h4>
+<p class="text-xs font-bold uppercase opacity-80">Platform-agnostic solutions</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-black flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[#fe9400]" style="">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline text-lg font-black uppercase mb-1" style="">Battle-Tested Systems</h4>
+<p class="text-xs font-bold uppercase opacity-80">Proven across multiple industries</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="px-4 md:px-8 mb-16 fade-in-up">
+<div class="brutalist-card bg-gradient-to-br from-black to-gray-900 text-white p-12 text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-[#fe9400] opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-[#fe9400] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2 animate-pulse delay-500"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+<div class="relative z-10">
+<span class="inline-block px-4 py-2 bg-[#fe9400] text-black font-headline font-bold text-sm tracking-[0.2em] uppercase mb-6 animate-bounce" style="">Ready To Scale</span>
+<h2 class="font-headline text-4xl md:text-5xl font-black mb-6 uppercase italic text-black group-hover:scale-105 transition-transform duration-300" style="">Initialize Your Growth System</h2>
+<p class="text-lg max-w-2xl mx-auto mb-8 font-bold uppercase tracking-wide text-black group-hover:opacity-100 transition-opacity duration-300">Schedule a strategy session to map your growth architecture and identify high-leverage implementation opportunities.</p>
+<button class="brutalist-button px-12 py-6 text-xl uppercase tracking-tighter inline-flex items-center gap-3 group/btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined font-black group-hover/btn:rotate-45 transition-transform duration-300">rocket_launch</span>
+Book Strategy Call
+</button>
+</div>
+</div>
+</section>
+<!-- Machine Stats Section -->
+<div class="lg:col-span-12 brutalist-card bg-[#fe9400] p-1 flex items-center justify-between border-black overflow-hidden mt-16">
+    <div class="bg-black text-white px-8 py-3 font-headline font-black text-2xl italic uppercase whitespace-nowrap">THE MACHINE</div>
+    <div class="flex-grow flex justify-center space-x-12 px-8 overflow-hidden">
+        <span class="material-symbols-outlined text-black animate-pulse">settings_input_component</span>
+        <span class="material-symbols-outlined text-black">precision_manufacturing</span>
+        <span class="material-symbols-outlined text-black animate-pulse">terminal</span>
+        <span class="material-symbols-outlined text-black">developer_board</span>
+        <span class="material-symbols-outlined text-black">database</span>
+    </div>
+</div>
+
+<div class="grid lg:grid-cols-12 gap-8 mt-8">
+    <div class="lg:col-span-12 brutalist-card bg-white p-8">
+        <span class="font-headline font-black text-[#fe9400] bg-black px-4 py-1 text-sm uppercase tracking-widest mb-8 inline-block">Unified Architecture</span>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-black flex items-center justify-center border-2 border-[#fe9400]">
+                        <span class="material-symbols-outlined text-[#fe9400]">settings_input_component</span>
+                    </div>
+                    <h4 class="font-headline text-lg font-black uppercase">End-to-End Deployment</h4>
+                </div>
+                <p class="text-xs font-bold leading-relaxed uppercase border-l-2 border-black pl-4">We don't provide services; we install full-stack growth infrastructure directly into your existing operations.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-black flex items-center justify-center border-2 border-[#fe9400]">
+                        <span class="material-symbols-outlined text-[#fe9400]">precision_manufacturing</span>
+                    </div>
+                    <h4 class="font-headline text-lg font-black uppercase">Technical Sovereignty</h4>
+                </div>
+                <p class="text-xs font-bold leading-relaxed uppercase border-l-2 border-black pl-4">Systems that work independently of third-party platforms, ensuring long-term resilience and value.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<!-- Contact Section (Replaces Modal) -->
+<section id="contact" class="px-4 md:px-8 mb-16 fade-in-up">
+    <div class="flex items-center gap-4 bg-black text-white p-4 mb-10">
+        <h2 class="font-headline text-3xl font-black uppercase tracking-tighter italic" style="">Initialize Strategy</h2>
+        <div class="h-px flex-grow bg-white/20"></div>
+        <span class="font-mono text-[#fe9400] font-bold" style="">[SECURE_LINE]</span>
+    </div>
+    <div class="brutalist-card bg-white overflow-hidden relative group">
+        <div class="grid lg:grid-cols-12">
+            <div class="lg:col-span-5 bg-black p-12 text-white flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 [background-size:20px_20px] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)]"></div>
+                <div class="relative z-10">
+                    <span class="inline-block px-4 py-2 bg-[#fe9400] text-black font-headline font-bold text-xs tracking-[0.3em] uppercase mb-8">Secure Transmission</span>
+                    <h2 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 italic leading-none">Connect <br> With <br> <span class="text-[#fe9400]">RNG Studio</span></h2>
+                    <p class="font-mono text-xs uppercase font-bold text-white/60 mb-12 leading-loose max-w-xs">
+                        Secure your coordinates for a direct strategy assessment. Kinetic engine deployment starting at stage zero.
+                    </p>
+                    <div class="space-y-4 font-mono">
+                        <div class="border-b border-white/20 pb-3 flex justify-between items-center">
+                            <span class="uppercase text-[10px] text-white/50 tracking-widest">_transmission</span>
+                            <span class="text-[#fe9400] font-black">ACTIVE</span>
+                        </div>
+                        <div class="border-b border-white/20 pb-3 flex justify-between items-center">
+                            <span class="uppercase text-[10px] text-white/50 tracking-widest">_node_id</span>
+                            <span class="text-[#fe9400] font-black">B-402</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 p-12 bg-white">
+                <form id="contact-form" class="space-y-6 font-mono text-sm" action="https://formsubmit.co/hashilpatel9909@gmail.com" method="POST">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="group/input">
+                            <label class="block uppercase font-black text-[10px] mb-2 tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#fe9400] inline-block"></span> Operative Name
+                            </label>
+                            <input required type="text" name="name" class="w-full border-2 border-black p-4 focus:outline-none focus:border-[#fe9400] focus:ring-4 focus:ring-[#fe9400]/10 bg-gray-50 uppercase font-black transition-all" placeholder="ENTER IDENTIFIER">
+                        </div>
+                        <div class="group/input">
+                            <label class="block uppercase font-black text-[10px] mb-2 tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-[#fe9400] inline-block"></span> Comms Channel (Email)
+                            </label>
+                            <input required type="email" name="email" class="w-full border-2 border-black p-4 focus:outline-none focus:border-[#fe9400] focus:ring-4 focus:ring-[#fe9400]/10 bg-gray-50 uppercase font-black transition-all" placeholder="ENTER SECURE EMAIL">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block uppercase font-black text-[10px] mb-2 tracking-widest flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-[#fe9400] inline-block"></span> Target Objective
+                        </label>
+                        <select name="objective" class="w-full border-2 border-black p-4 focus:outline-none focus:border-[#fe9400] focus:ring-4 focus:ring-[#fe9400]/10 bg-gray-50 uppercase appearance-none font-black cursor-pointer">
+                            <option>Full Growth System (Premium)</option>
+                            <option>Client Flow System</option>
+                            <option>Conversion Engine</option>
+                            <option>Growth Infrastructure</option>
+                            <option>Authority System</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block uppercase font-black text-[10px] mb-2 tracking-widest flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-[#fe9400] inline-block"></span> Operational Notes
+                        </label>
+                        <textarea name="notes" class="w-full border-2 border-black p-4 focus:outline-none focus:border-[#fe9400] focus:ring-4 focus:ring-[#fe9400]/10 bg-gray-50 uppercase font-black min-h-[120px]" placeholder="DESCRIBE PARAMETERS..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full brutalist-button py-6 uppercase tracking-tighter text-2xl font-black bg-[#fe9400] border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all">Transmit Coordinates</button>
+                </form>
+                <div id="success-message" class="hidden p-12 bg-black text-[#fe9400] font-headline font-black uppercase text-center border-4 border-[#fe9400] animate-scale-in">
+                    <span class="material-symbols-outlined text-6xl block mb-4 animate-bounce">task_alt</span>
+                    <div class="text-3xl mb-2 italic">Transmission Received.</div>
+                    <div class="text-xs opacity-50 tracking-[0.3em]">Standby for protocol initialization.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 max-w-full">
+<div class="p-12 border-r border-white/10 md:col-span-2 space-y-8">
+<div class="text-4xl font-black text-[#fe9400] font-headline tracking-tighter uppercase italic" style="">RNG Studio</div>
+<p class="text-[12px] font-bold uppercase tracking-wider max-w-sm leading-loose opacity-60" style="">
+                Kinetic growth engineering for market leaders. High-velocity systems for high-stakes competition.
+            </p>
+<div class="flex gap-4">
+<button class="w-10 h-10 border border-white flex items-center justify-center hover:bg-[#fe9400] hover:text-black transition-colors" style="">
+<span class="material-symbols-outlined text-sm" style="">share</span>
+</button>
+<button class="w-10 h-10 border border-white flex items-center justify-center hover:bg-[#fe9400] hover:text-black transition-colors" style="">
+<span class="material-symbols-outlined text-sm" style="">public</span>
+</button>
+</div>
+</div>
+<div class="p-12 border-r border-white/10">
+<h4 class="font-headline font-black uppercase text-xs tracking-[0.3em] mb-8 text-[#fe9400]" style="">Quick Links</h4>
+<ul class="space-y-4 font-bold uppercase text-[10px]">
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#services" style="">[ Services ]</a></li>
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#process" style="">[ Process ]</a></li>
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#about" style="">[ About ]</a></li>
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#contact" style="">[ Contact ]</a></li>
+</ul>
+</div>
+<div class="p-12">
+<h4 class="font-headline font-black uppercase text-xs tracking-[0.3em] mb-8 text-[#fe9400]" style="">Legal</h4>
+<ul class="space-y-4 font-bold uppercase text-[10px]">
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#" style="">[ Privacy Policy ]</a></li>
+<li class="" style=""><a class="hover:text-[#fe9400] transition-colors" href="#" style="">[ Terms of Service ]</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 p-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-40" style="">© 2024 RNG Studio. Kinetic Engine Powered. [Build_v4.0.2]</span>
+<span class="text-[#fe9400] font-headline text-xs font-black uppercase tracking-[0.5em] italic" style="">Momentum. Always.</span>
+</div>
+</footer>
+
+<script>
+    // Loading Screen Logic
+    window.addEventListener('load', () => {
+        const loadingStatus = document.getElementById('loading-status');
+        const statuses = [
+            'Loading components...',
+            'Initializing systems...',
+            'Deploying protocols...',
+            'Calibrating engines...',
+            'System ready...'
+        ];
+        
+        let statusIndex = 0;
+        const statusInterval = setInterval(() => {
+            if (statusIndex < statuses.length) {
+                loadingStatus.textContent = statuses[statusIndex];
+                statusIndex++;
+            } else {
+                clearInterval(statusInterval);
+            }
+        }, 500);
+        
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.visibility = 'hidden';
+            
+            // Trigger initial animations after loading
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 300);
+        }, 2800);
+    });
+
+    // 1. Reveal Animations for Service Cards
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card').forEach((card) => {
+        card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+        observer.observe(card);
+    });
+
+    // 2. Scroll Animation Observer
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-up').forEach((el) => {
+        scrollObserver.observe(el);
+    });
+
+    // 3. Smooth Scroll Navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if(href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                window.scrollTo({ 
+                    top: target.offsetTop - 100, 
+                    behavior: 'smooth' 
+                });
+            }
+        });
+    });
+
+    // 4. Attach CTAs to Contact Section
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+        const text = btn.innerText.toUpperCase();
+        if(text.includes('INITIALIZE') || text.includes('BOOK A STRATEGY CALL')) {
+            btn.addEventListener('click', (e) => {
+                if(btn.type !== 'submit' && !btn.hasAttribute('onclick')) {
+                    e.preventDefault();
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+    });
+
+    // 5. Form Submission Mocking
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.innerText = "Transmitting...";
+        
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            } else {
+                btn.innerText = "Error - Retry";
+            }
+        }).catch(error => {
+            btn.innerText = "Error - Retry";
+        });
+    });
+
+    // 6. Parallax Effect for Grid Background
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelector('.grid-pattern').style.backgroundPosition = `0 ${scrolled * 0.5}px`;
+    });
+
+    // 7. Counter Animation for Stats
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stat = entry.target;
+                stat.classList.add('animate-pulse');
+                setTimeout(() => {
+                    stat.classList.remove('animate-pulse');
+                }, 1000);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.group > div.text-6xl').forEach(stat => {
+        statsObserver.observe(stat);
+    });
+</script>
+</body></html>
